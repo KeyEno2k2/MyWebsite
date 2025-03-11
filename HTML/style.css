@@ -1,7 +1,8 @@
 body {
     margin: 0;
     display: flex;
-    height: 100vh;
+    flex-direction: column;
+    height: 100%;
 }
 
 .header {
@@ -9,23 +10,24 @@ body {
     text-align: center;
     background-color: #B3AFB0;
     font-family: "Monotype Corsiva";
+    padding: 10px;
 }
 
 .mainContainer {
     display: flex;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
 }
 
 .mainContainer .column {
     padding: 20px;
     border: 1px solid #B3AFB0;
-    border-radius: 10px;
-    margin: 2px;
+    /* border-radius: 10px; */
+    /* margin: 2px; */
 }
 
 .mainContainer .left {
-    width: 250px;
+    width: 20%;
     background-color: #8742F5;
     display: flex;
     flex-direction: column;
@@ -34,8 +36,12 @@ body {
 }
 
 .mainContainer .right {
-    flex: 1;
+    display: flex;
+    width: 80%;
+    flex-direction: column;
     background-color: #B3AFB0;
+    align-items: center;
+    padding: 20px;
 }
 
 .mainContainer .left .button {
@@ -55,6 +61,151 @@ body {
 }
 
 .mainContainer .left .button:hover {
-    background-color: #555; 
+    background-color: #555;
     color: white;
+}
+
+.mainPage {
+    text-align: center;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainPage .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.mainPage .container .column {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 1px solid #B3AFB0;
+    border-radius: 10px;
+    margin: 2px;
+}
+
+.mainPage .container .left,
+.mainPage .container .right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    background-color: #B3AFB0;
+}
+
+.mainPage .container .right {
+    background-color: #B3AFB0;
+}
+
+.mainPage .Title {
+    display: block;
+    width: 90%;
+    padding: 10px;
+    margin: 0 auto;
+    border: none;
+    font-size: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+    text-align: center;
+    text-decoration: none;
+    background-color: #8742F5;
+    color: black;
+
+}
+
+.mainPage .Image {
+    align-items: center;
+}
+
+.mainPage .Image img {
+    border-radius: 50px;
+    max-width: 100%;
+    height: auto;
+}
+
+.mainPage .mainTextArea {
+    display: block;
+    width: 60%;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    font-size: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+    text-align: center;
+    text-decoration: none;
+    background-color: #8742F5;
+    color: black;
+
+}
+
+.mainPage p {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 20px;
+    line-height: 1.5;
+    padding-bottom: 20px;
+}
+
+
+/* --- Responsibility --- */
+@media (max-width: 768px) {
+    .mainContainer {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .mainContainer .left {
+        width: 100%;
+        padding: 10px;
+        align-items: center;
+    }
+
+    .mainContainer .right {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .mainPage .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .mainPage .container .left,
+    .mainPage .container .right {
+        width: 100%;
+        text-align: center;
+    }
+
+    .mainPage {
+        font-size: 24px;
+    }
+
+    .mainPage .mainTextArea {
+        width: 80%;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mainPage {
+        font-size: 20px;
+    }
+
+    .mainPage .mainTextArea {
+        width: 90%;
+        font-size: 16px;
+    }
+
+    .mainContainer .left .button {
+        width: 100%;
+        font-size: 14px;
+        padding: 8px;
+    }
 }
